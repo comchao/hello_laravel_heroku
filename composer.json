@@ -43,9 +43,10 @@
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate",
-            "php artisan clear-compiled",
-            "php artisan optimize",
+            "@php artisan key:generate"
+        ],
+        "pre-update-cmd": [
+            "php clear-compiled",
             "chmod -R 777 public/"
         ],
         "post-autoload-dump": [
